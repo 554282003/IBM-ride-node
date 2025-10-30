@@ -3,6 +3,7 @@ import app from "./app.js";
 import { connectDB } from "./database/db.mongodb.js";
 import { sequelize } from "./database/db.mysql.js";
 
+
 dotenv.config();
 // console.log(dotenv.config());
 
@@ -20,6 +21,7 @@ async function startServer() {
     const PORT = process.env.PORT || 8000;
     app.listen(PORT, () => {
       console.log(`Server running at http://localhost:${PORT}`);
+      console.log(`Swagger docs available at http://localhost:${PORT}/api-docs`);
     });
   } catch (err) {
     console.error("Failed to start server:", err);
